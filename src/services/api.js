@@ -4,7 +4,7 @@ import axios from 'axios'
 // Replace BASE_URL with your actual MockAPI endpoint.
 // Example: https://67xxxxxxxxxxxxxxxx.mockapi.io/api/v1
 // ──────────────────────────────────────────────────────────────────────────────
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://67f000000000000000000000.mockapi.io/api/v1'
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://6a1769a21878294b597b5c76.mockapi.io/api/v1'
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -34,7 +34,7 @@ export async function updateReservation(id, payload) {
 
 /** Patch only the state of a reservation */
 export async function patchReservationStatus(id, estado) {
-  const { data } = await api.patch(`/reservas/${id}`, { estado })
+  const { data } = await api.put(`/reservas/${id}`, { estado })
   return data
 }
 
