@@ -2,6 +2,10 @@
 
 > Aplicación SPA para que los anfitriones de un restaurante gestionen reservas de mesas de forma eficiente, con una interfaz elegante en tonos **Rosa Cuarzo** y **Azul Serenidad**.
 
+## 🌐 Demo en vivo
+
+👉 **https://startling-zuccutto-9af21b.netlify.app**
+
 ---
 
 ## 🚀 Stack Tecnológico
@@ -20,21 +24,20 @@
 
 ## 🔗 API (MockAPI)
 
-Crea un proyecto en [mockapi.io](https://mockapi.io) con el recurso `/reservas` y los campos:
-
+URL base de la API:
 ```
-id            (auto)
-nombreCliente string
-fechaHora     string  (ISO datetime)
-cantidadPersonas number
-estado        string  (Confirmada | En Espera | Finalizada)
+https://6a1769a21878294b597b5c76.mockapi.io/api/v1
 ```
 
-Copia la URL base de tu proyecto (ej: `https://xxxxxxxxxx.mockapi.io/api/v1`) y pégala en el archivo `.env.local`:
+Recurso: `/reservas` con los campos:
 
-```env
-VITE_API_URL=https://TU_ID.mockapi.io/api/v1
-```
+| Campo | Tipo |
+|---|---|
+| `id` | auto |
+| `nombreCliente` | String |
+| `fechaHora` | String (ISO datetime) |
+| `cantidadPersonas` | Number |
+| `estado` | String (Confirmada / En Espera / Finalizada) |
 
 ---
 
@@ -70,8 +73,8 @@ src/
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/table-track.git
-cd table-track
+git clone https://github.com/Anavalencia17/Front-table-trackFinal.git
+cd Front-table-trackFinal
 ```
 
 ### 2. Instalar dependencias
@@ -84,7 +87,11 @@ npm install
 
 ```bash
 cp .env.example .env.local
-# Edita .env.local y pega tu URL de MockAPI
+```
+
+Edita `.env.local`:
+```env
+VITE_API_URL=https://6a1769a21878294b597b5c76.mockapi.io/api/v1
 ```
 
 ### 4. Ejecutar en local
@@ -100,19 +107,6 @@ La aplicación estará disponible en `http://localhost:5173`.
 ```bash
 npm run build
 ```
-
----
-
-## 🌐 Despliegue
-
-Recomendado: **Vercel** o **Netlify**.
-
-```bash
-# Con Vercel CLI
-vercel --prod
-```
-
-Recuerda agregar la variable de entorno `VITE_API_URL` en el panel de tu proveedor de hosting.
 
 ---
 
